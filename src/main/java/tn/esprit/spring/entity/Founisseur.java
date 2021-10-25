@@ -15,5 +15,34 @@ public class Founisseur implements Serializable{
 	private String code;
 	//@Column(name="EMPL_lastName")
 	private String libelle;
+	
+	
+	public Founisseur() {
+		
+	}
+	public Founisseur(int idFournisseur, String code, String libelle) {
+		
+		this.idFournisseur = idFournisseur;
+		this.code = code;
+		this.libelle = libelle;
+	}
+	public int getIdFournisseur() {
+		return idFournisseur;
+	}
+	public void setIdFournisseur(int idFournisseur) {
+		this.idFournisseur = idFournisseur;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getLibelle() {
+		return libelle;
+	}
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
 
 }
