@@ -13,7 +13,7 @@ public class FactureServiceImpl implements FactureService {
 	@Override
 	public List<Facture> retrieveAllFactures() {
 		// TODO Auto-generated method stub
-		return null;
+		return (List<Facture>) factureRepository.findAll();
 	}
 
 	@Override
