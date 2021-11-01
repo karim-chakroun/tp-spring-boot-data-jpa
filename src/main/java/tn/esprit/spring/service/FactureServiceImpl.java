@@ -18,7 +18,7 @@ public class FactureServiceImpl implements FactureService {
 
 	@Override
 	public void cancelFacture(Long id) {
-		// TODO Auto-generated method stub
+		factureRepository.findById(id).get().setActive(false);
 		
 	}
 
