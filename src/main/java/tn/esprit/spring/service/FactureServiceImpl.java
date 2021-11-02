@@ -9,6 +9,7 @@ import tn.esprit.spring.repository.FactureRepository;
 public class FactureServiceImpl implements FactureService {
 	
 	FactureRepository factureRepository;
+	Facture facture;
 
 	@Override
 	public List<Facture> retrieveAllFactures() {
@@ -19,6 +20,7 @@ public class FactureServiceImpl implements FactureService {
 	@Override
 	public void cancelFacture(Long id) {
 		factureRepository.findById(id).get().setActive(false);
+		factureRepository.save(facture);
 		
 	}
 
