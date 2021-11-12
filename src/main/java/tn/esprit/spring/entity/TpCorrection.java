@@ -9,8 +9,17 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name="T_TP_CORRECTION")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class TpCorrection {
 	
 	private static final long serialVersionUID = 1L;

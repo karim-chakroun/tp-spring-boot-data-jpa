@@ -13,8 +13,17 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "T_TP")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class TravauxPratiques implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

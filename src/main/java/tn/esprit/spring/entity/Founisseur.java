@@ -7,7 +7,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Founisseur implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -19,32 +28,6 @@ public class Founisseur implements Serializable{
 	private String libelle;
 	
 	
-	public Founisseur() {
-		
-	}
-	public Founisseur(int idFournisseur, String code, String libelle) {
-		
-		this.idFournisseur = idFournisseur;
-		this.code = code;
-		this.libelle = libelle;
-	}
-	public int getIdFournisseur() {
-		return idFournisseur;
-	}
-	public void setIdFournisseur(int idFournisseur) {
-		this.idFournisseur = idFournisseur;
-	}
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getLibelle() {
-		return libelle;
-	}
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
+	
 
 }

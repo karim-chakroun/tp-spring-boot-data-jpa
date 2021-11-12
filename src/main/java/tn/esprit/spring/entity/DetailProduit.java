@@ -10,7 +10,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class DetailProduit implements Serializable {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -23,48 +32,7 @@ public class DetailProduit implements Serializable {
 	private CategorieProduit categorieproduit;
 	@OneToOne
 	private Produit produit;
-	public int getIdDetailProduit() {
-		return idDetailProduit;
-	}
-	public void setIdDetailProduit(int idDetailProduit) {
-		this.idDetailProduit = idDetailProduit;
-	}
-	public Date getDateCreation() {
-		return dateCreation;
-	}
-	public void setDateCreation(Date dateCreation) {
-		this.dateCreation = dateCreation;
-	}
-	public Date getDateDerniereModification() {
-		return dateDerniereModification;
-	}
-	public void setDateDerniereModification(Date dateDerniereModification) {
-		this.dateDerniereModification = dateDerniereModification;
-	}
-	public CategorieProduit getCategorieproduit() {
-		return categorieproduit;
-	}
-	public void setCategorieproduit(CategorieProduit categorieproduit) {
-		this.categorieproduit = categorieproduit;
-	}
-	public Produit getProduit() {
-		return produit;
-	}
-	public void setProduit(Produit produit) {
-		this.produit = produit;
-	}
-	public DetailProduit() {
-		
-	}
-	public DetailProduit(int idDetailProduit, Date dateCreation, Date dateDerniereModification,
-			CategorieProduit categorieproduit, Produit produit) {
-		
-		this.idDetailProduit = idDetailProduit;
-		this.dateCreation = dateCreation;
-		this.dateDerniereModification = dateDerniereModification;
-		this.categorieproduit = categorieproduit;
-		this.produit = produit;
-	}
+	
 	
 	
 }

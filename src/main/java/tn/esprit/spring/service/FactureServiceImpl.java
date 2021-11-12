@@ -2,12 +2,14 @@ package tn.esprit.spring.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import tn.esprit.spring.entity.Client;
 import tn.esprit.spring.entity.Facture;
 import tn.esprit.spring.repository.FactureRepository;
 
 public class FactureServiceImpl implements FactureService {
-	
+	@Autowired
 	FactureRepository factureRepository;
 	Facture facture;
 

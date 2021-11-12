@@ -12,8 +12,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 @Entity
 @Table( name = "T_EMPLOYEE")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class User implements Serializable {
 @Id
 @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -29,64 +38,13 @@ private String lastName;
 @Enumerated(EnumType.STRING)
 private Rolee rolee;
 
-public User() {
-	
-}
-
 @Override
 public String toString() {
 	return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", role=" + rolee + ", date="
 			+ date + "]";
 }
 
-public User(int id, String firstName, String lastName, Role role, Date date) {
-	
-	this.id = id;
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.rolee = rolee;
-	this.date = date;
-}
 
-public int getId() {
-	return id;
-}
-
-public void setId(int id) {
-	this.id = id;
-}
-
-public String getFirstName() {
-	return firstName;
-}
-
-public void setFirstName(String firstName) {
-	this.firstName = firstName;
-}
-
-public String getLastName() {
-	return lastName;
-}
-
-public void setLastName(String lastName) {
-	this.lastName = lastName;
-}
-
-public Rolee getRole() {
-	return rolee;
-}
-
-public void setRole(Rolee rolee) {
-	this.rolee = rolee;
-}
-
-public Date getDate() {
-	return date;
-}
-
-public void setDate(Date date) {
-	this.date = date;
-}
 
 @Temporal (TemporalType.DATE)
 private Date date;

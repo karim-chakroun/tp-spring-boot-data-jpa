@@ -9,7 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Stock implements Serializable {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -23,58 +32,19 @@ public class Stock implements Serializable {
 	@OneToMany(mappedBy = "stock")
 	private  List <Produit> produit;
 
-	public int getIdStock() {
-		return idStock;
-	}
+	
 
-	public void setIdStock(int idStock) {
-		this.idStock = idStock;
-	}
-
-	public int getQte() {
-		return qte;
-	}
-
-	public void setQte(int qte) {
-		this.qte = qte;
-	}
-
-	public int getQteMin() {
-		return qteMin;
-	}
-
-	public void setQteMin(int qteMin) {
-		this.qteMin = qteMin;
-	}
-
-	public String getLibelleStock() {
-		return libelleStock;
-	}
-
-	public void setLibelleStock(String libelleStock) {
-		this.libelleStock = libelleStock;
-	}
-
-	public List<Produit> getProduit() {
-		return produit;
-	}
-
-	public void setProduit(List<Produit> produit) {
-		this.produit = produit;
-	}
-
-	public Stock() {
-		
-	}
-
-	public Stock(int idStock, int qte, int qteMin, String libelleStock, List<Produit> produit) {
-		
-		this.idStock = idStock;
+	public Stock(int qte, int qteMin, String libelleStock) {
+		super();
 		this.qte = qte;
 		this.qteMin = qteMin;
 		this.libelleStock = libelleStock;
-		this.produit = produit;
 	}
+	
+	
+	
+	
+	
 	
 	
 	
