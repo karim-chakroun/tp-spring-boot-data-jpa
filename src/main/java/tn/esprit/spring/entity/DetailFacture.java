@@ -21,7 +21,7 @@ public class DetailFacture implements Serializable {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	//@Column(name="EMPL_ID")
-	private int idDetailFacture; // Clé primaire
+	private long idDetailFacture; // Clé primaire
 	//@Column(name="EMPL_firstName",unique=true)
 	private int qte;
 	private float prixTotal;
