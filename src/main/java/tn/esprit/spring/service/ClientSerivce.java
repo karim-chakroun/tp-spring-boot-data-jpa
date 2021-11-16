@@ -2,8 +2,10 @@ package tn.esprit.spring.service;
 
 import java.util.List;
 
-import tn.esprit.spring.entity.Client;
+import org.springframework.stereotype.Repository;
 
+import tn.esprit.spring.entity.Client;
+@Repository
 public interface ClientSerivce {
 	
 	List<Client> retrieveAllClients();

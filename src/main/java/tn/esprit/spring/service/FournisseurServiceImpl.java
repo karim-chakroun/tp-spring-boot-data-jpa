@@ -3,10 +3,12 @@ package tn.esprit.spring.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entity.Founisseur;
 import tn.esprit.spring.repository.FournisseurRepository;
 
+@Service
 public class FournisseurServiceImpl implements FournisseurService {
 
 	@Autowired

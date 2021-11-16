@@ -26,7 +26,7 @@ public class Client implements Serializable {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	//@Column(name="EMPL_ID")
-	private int idClient; // Clé primaire
+	private long idClient; // Clé primaire
 	//@Column(name="EMPL_firstName",unique=true)
 	private String nom;
 	//@Column(name="EMPL_lastName")
