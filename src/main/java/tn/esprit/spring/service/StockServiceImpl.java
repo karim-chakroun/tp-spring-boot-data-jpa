@@ -3,6 +3,7 @@ package tn.esprit.spring.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entity.Stock;
@@ -37,6 +38,34 @@ public class StockServiceImpl implements StockService {
 		// TODO Auto-generated method stub
 		Stock s = stockRepository.findById(id).get();
 		return s;
+	}
+	
+	
+	
+	
+
+
+	@Scheduled(fixedRate = 60000)
+	public void getStockRupture() {
+	
+	List<Stock> stocks = (List<Stock>) stockRepository.findAll();
+	
+	for(Stock stock : stocks)
+	{
+		
+		if(stock.getQte()==0){
+			log.info("Le stock : "+stock.getLibelleStock()+" est en repture!"); 
+		}
+		else if(stock.getQte() == stock.getQteMin())
+		{
+			log.info("Le stock : "+stock.getLibelleStock()+" a atteint sa quantité minimale."); 
+		}
+		
+		else if(stock.getQte()<stock.getQteMin())
+		{
+			log.info("Le stock : "+stock.getLibelleStock()+" risque une repture!"); 
+		}		
+	}
 	}
 
 }

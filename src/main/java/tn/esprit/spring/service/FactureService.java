@@ -9,5 +9,6 @@ public interface FactureService {
 	List<Facture> retrieveAllFactures();
 	void cancelFacture(Long id);
 	Facture retrieveFacture(Long id);
+	public void revenue();
 
 }
