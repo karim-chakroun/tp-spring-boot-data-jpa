@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.entity.Stock;
 import tn.esprit.spring.repository.StockRepository;
 
 @Service
+@Slf4j
 public class StockServiceImpl implements StockService {
 	
 	@Autowired
