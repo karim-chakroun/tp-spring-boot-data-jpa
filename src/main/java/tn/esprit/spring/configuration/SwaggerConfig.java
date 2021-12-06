@@ -1,4 +1,4 @@
-package configuration;
+package tn.esprit.spring.configuration;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
