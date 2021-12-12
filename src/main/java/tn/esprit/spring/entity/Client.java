@@ -1,48 +1,56 @@
 package tn.esprit.spring.entity;
-
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
-
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
+@EqualsAndHashCode
+@Table( name = "Client")
+
+
 public class Client implements Serializable {
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	//@Column(name="EMPL_ID")
-	private long idClient; // Clé primaire
-	//@Column(name="EMPL_firstName",unique=true)
-	private String nom;
-	//@Column(name="EMPL_lastName")
-	private String prenom;
-	private Date dateNaissance;
-	private String email;
-	private String password;
-	@Enumerated(EnumType.STRING)
-	private CategorieClient categorieClient;
-	@Enumerated(EnumType.STRING)
-	private Profession profession;
-	@OneToMany(mappedBy = "client")
-	private  List <Facture> factures;
-	
-	
-	
-	
+
+	private static final long serialVersionUID = 1L;
+@Id
+@GeneratedValue (strategy = GenerationType.IDENTITY)
+@JoinColumn(name="idClient")
+private Long idClient; 
+private String nom;
+private String prenom;
+private String email;
+private String password;
+@Temporal(TemporalType.DATE)
+private Date dateNaissance;
+@Enumerated(EnumType.STRING)
+private Profession profession;
+@Enumerated(EnumType.STRING)
+private CategorieClient categorieClient;
+
+
+@OneToMany(cascade = CascadeType.ALL,mappedBy = "client",fetch = FetchType.LAZY)
+
+private Set<Facture> factures;
+
+
 
 }

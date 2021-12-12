@@ -1,9 +1,16 @@
 package tn.esprit.spring.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+import tn.esprit.spring.entity.*;
 
-import tn.esprit.spring.entity.Stock;
+@Repository
+public interface StockRepository extends JpaRepository<Stock, Long>{
 
-public interface StockRepository extends CrudRepository<Stock,Long> {
-
+	@Query("SELECT st FROM Stock st WHERE st.qte<=st.qteMin")
+	List<Stock> getStocksWithWarnings(); 
+	
+	
 }
